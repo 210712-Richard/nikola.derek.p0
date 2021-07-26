@@ -6,60 +6,52 @@ import java.time.Period;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.revature.beans.BankObject;
+
 import com.revature.beans.User;
 import com.revature.data.UserDAO;
 
 public class UserService {
-	private Logger log = LogManager.getLogger(UserService.class);
+	//
+	//private Logger log = LogManager.getLogger(UserService.class);
 	public UserDAO ud = new UserDAO();
 	
 	public User login(String name) {
 		User u = ud.getUser(name);
+		ud.writeToFile();
 		return u;
 	}
 	
-	public void doCheckIn(User user) {
-		user.setLastCheckIn(LocalDate.now());
-		user.setCurrency(user.getCurrency() + BankObject.DAILY_BONUS);
+	public void Deposit(User user, Long funds) {
+		user.setFunds(user.getFunds() + funds);
+		ud.writeToFile();
+	}
+	public void Withdraw(User user, Long funds) {
+		user.setFunds(user.getFunds() - funds);
 		ud.writeToFile();
 	}
 	
-	public void register(String username, String email, LocalDate birthday) {
+	public void register(String username, String password, String email, String phone) {
 		User u = new User();
-		u.setCurrency(1000l);
 		u.setUsername(username);
 		u.setEmail(email);
-		u.setBirthday(birthday);
+		u.setPhone(phone);
+		u.setPassword(password);
+		u.setFunds(0l);
 		ud.addUser(u);
 		ud.writeToFile();
 	}
-	
-	public boolean hasCheckedIn(User user) {
-		if(LocalDate.now().isAfter(user.getLastCheckIn())) {
-			return false;
-		}
-		return true;
-	}
 
-	public boolean checkAvailability(String newName) {
+	public boolean checkForDuplicates(String newName) {
 		return ud.getUsers()
 				.stream()
 				.noneMatch((u)->u.getUsername().equals(newName));
-//		for(User u: ud.getUsers()) {
-//			if(u.getUsername().equals(newName))
-//				return false;
-//		}
-//		return true;
 	}
-
-	public boolean checkBirthday(LocalDate birth) {
-		LocalDate now = LocalDate.now();
-		LocalDate sixteenYearsAgo = now.minus(Period.of(16, 0, 0));
-		log.debug(sixteenYearsAgo);
-		sixteenYearsAgo = sixteenYearsAgo.plus(Period.of(0, 0, 1));
-		log.debug(sixteenYearsAgo);
-		return birth.isBefore(sixteenYearsAgo);
+	
+	public boolean checkIfExists(String newName) {
+		return ud.getUsers()
+				.stream()
+				.noneMatch((u)->u.getUsername().equals(newName));
 	}
+	
 
 }

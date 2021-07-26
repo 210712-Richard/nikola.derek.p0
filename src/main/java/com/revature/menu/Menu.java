@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.revature.beans.BankObject;
+
 import com.revature.beans.User;
 import com.revature.services.UserService;
 import com.revature.util.SingletonScanner;
@@ -22,6 +22,7 @@ public class Menu {
 	private UserService us = new UserService();
 	private User loggedUser = null;
 	private Scanner scan = SingletonScanner.getScanner().getScan();
+	private Long newFunds = null;
 	
 	public void start() {
 		log.trace("Start BankApp. start()");
@@ -36,42 +37,52 @@ public class Menu {
 				User u = us.login(username);
 				if(u == null) {
 					log.warn("Unsuccessful login attempt: "+ username);
-					System.out.println("Please try again.");
+					System.out.println("Incorrect username. Please try again.");
 				} else {
-					loggedUser = u;
-					System.out.println("Welcome back: "+u.getUsername());
-					// call our next method (either the Member menu or the Associate menu, depending on user)
-					log.info("Successful login for user: "+loggedUser);
-					switch(loggedUser.getType()) {
-					case MEMBER:
-						member();
-						break;
-					case ASSOCIATE:
-						associate();
-						break;
+					
+					System.out.println("Enter password: ");
+					String password = scan.nextLine();
+					log.debug(password);
+					
+					if(!u.getPassword().equals(password)) {
+						log.warn("Unsuccessful login attempt for "+username+" using password: "+password);
+						System.out.println("Incorrect password.");
+						continue mainLoop;
+					}else {
+					
+						loggedUser = u;
+						System.out.println("Welcome back: "+u.getUsername());
+					
+						
+							switch(loggedUser.getType()) {
+							case MEMBER:
+								member();
+								break;
+							case ASSOCIATE:
+								associate();
+								break;
+							}
 					}
 				}
 				break;
 			case 2:
 				System.out.println("Choose your username: ");
 				String newName = scan.nextLine();
-				if(!us.checkAvailability(newName)) {
+				if(!us.checkForDuplicates(newName)) {
 					System.out.println("Username not available, please try again.");
 					continue mainLoop;
 				}
+				System.out.println("Enter your password: ");
+				String password = scan.nextLine();
+				
 				System.out.println("Enter your email address: ");
 				String email = scan.nextLine();
-				System.out.println("enter your birthday (YYYY/MM/DD): ");
-				List<Integer> bday = Stream.of(scan.nextLine().split("/"))
-						.map((str)->Integer.parseInt(str)).collect(Collectors.toList());
 				
-				LocalDate birth = LocalDate.of(bday.get(0), bday.get(1), bday.get(2));
-				if(!us.checkBirthday(birth)) {
-					System.out.println("Not old enough, please try again when you are older.");
-					continue mainLoop;
-				}
-				System.out.println("Registering...");
-				us.register(newName, email, birth);
+				System.out.println("enter your Phone Number (XXX-XXX-XXXX): ");
+				String phone = scan.nextLine();
+				
+				
+				
 				break;
 			case 3:
 				// quit
@@ -96,49 +107,123 @@ public class Menu {
 		log.trace("Start menu returning selection: "+selection);
 		return selection;
 	}
-	
-	private void member() {
-		log.trace("called member()");
-		player: while(true) {
-			switch(memberMenu()) {
-			case 1:
-				// daily bonus
-				if(us.hasCheckedIn(loggedUser)) {
-					System.out.println("Already checked in today, please try again tomorrow!");
-					break;
-				}
-				us.doCheckIn(loggedUser);
-				System.out.println("You gained $"+BankObject.DAILY_BONUS);
-				System.out.println("Your new total is $"+loggedUser.getCurrency());
-				break;
-			case 2:
-				// view currency
-				System.out.println("You currently have $"+loggedUser.getCurrency());
-				break;
-			case 3:
-				// spend currency
-				break;
-			case 4:
-				loggedUser = null;
-				break player;
-			default:
-			}
-		}
-	}
-	
 	private int memberMenu() {
 		System.out.println("What would you like to do?");
-		System.out.println("\t1. Deposit");
-		System.out.println("\t2. Check Balance");
+		System.out.println("\t1. Check Balance");
+		System.out.println("\t2. Deposit");
 		System.out.println("\t3. Make Withdrawal");
 		System.out.println("\t4. Logout");
 		return select();
 	}
-	private void associate() {
-		associate: while(true) {
+	private int associateMenu() {
+		log.trace("called associate()");
+		System.out.println("What would you like to do?");
+		System.out.println("\t1. View Own Account Balance");
+		System.out.println("\t2. Deposit Funds");
+		System.out.println("\t3. Withdraw Funds");
+		System.out.println("");
+		System.out.println("\t4. View Members' Account Balance");
+		System.out.println("\t5. Log Out");
+		int selection = select();
+		log.trace("Banker menu returning selection: "+selection);
+		return selection;
+	}
+	
+	private void member() {
+		log.trace("called member()");
+		memberLoop: while(true) {
+			switch(memberMenu()) {
+			case 1:
+				// view balance
+				System.out.println("You have " + loggedUser.getFunds() + " in your account.");				
+				break;
+			case 2:
+				// make a deposit
+				System.out.println("Enter amount you would like to deposit?");
+				
+				newFunds = fundsChange();
+				us.Deposit(loggedUser, newFunds);
+				log.trace("Deposited "+newFunds+" to balance");
+				System.out.println("Your new balance is " + loggedUser.getFunds() + ".");
+				break;
 			
+			case 3:
+				// make a withdrawal
+				System.out.println("Enter amount you would like to withdraw?");
+				
+				newFunds = fundsChange();
+				
+				us.Withdraw(loggedUser, newFunds);
+				log.trace("Withdrew "+newFunds+" from balance");
+				System.out.println("Your new balance is " + loggedUser.getFunds() + ".");
+				break;	
+			case 4:
+				//Log out
+				loggedUser = null;
+				break memberLoop;
+			
+			default:
+				System.out.println("Invalid option. Please try again.");
+			}
 		}
 	}
+	
+	
+	private void associate() {
+		associateLoop: while(true) {
+			switch(associateMenu()) {
+			case 1:
+				// view associate account
+				System.out.println("You have " + loggedUser.getFunds() + " available.");
+				break;
+			case 2:
+				// deposit
+				System.out.println("Enter the amount you would like to deposit: ");
+				
+				newFunds = fundsChange();
+				
+				us.Deposit(loggedUser, newFunds);
+				log.trace("Deposited "+newFunds+" to balance");
+				System.out.println("Your new available balance is " + loggedUser.getFunds() + ".");
+				break;
+			case 3:
+				// withdraw
+				System.out.println("Enter the amount you would like to withdraw: ");
+				
+				newFunds = fundsChange();
+				
+				us.Withdraw(loggedUser, newFunds);
+				log.trace("Withdrew "+newFunds+" from balance");
+				System.out.println("Your new balance is " + loggedUser.getFunds() + ".");
+				break;
+			case 4:
+				// view members' balances
+				System.out.println("Enter the member username whose account you'd like to view: ");
+				
+				String inputUser = scan.nextLine();
+				
+				boolean exists = us.checkIfExists(inputUser); 
+				if(!exists) {
+					System.out.println("User does not exist.");
+				}else {
+					User u = us.login(inputUser);
+					System.out.println("User "+inputUser+" has "+u.getFunds()+" in their account.");
+					log.trace("Viewed user balance: "+inputUser);
+				}
+				break;
+			
+			case 5:
+				// log out
+				loggedUser = null;
+				break associateLoop;
+			default:
+				System.out.println("Invalid option. Please try again.");
+			}
+		}
+		
+			
+		}
+	
 	
 	
 	private int select() {
@@ -151,5 +236,18 @@ public class Menu {
 		//log
 		return selection;
 	}
+	
+	// reading funds from deposit/withdrawal
+			private long fundsChange() {
+				long newMoney;
+				try {
+					newMoney = Long.parseLong(scan.nextLine());
+				} catch(Exception e) {
+					newMoney = 0;
+				}
+				
+				return newMoney;
+			}
+		
 
 }

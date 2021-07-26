@@ -22,9 +22,9 @@ public class DataSerializer<T> {
 		return objects;
 	}
 
-	public void writeObjectsToFile(List<T> objects, String filename) {
+	public void writeFundsToFile(List<T> funds, String filename) {
 		try (ObjectOutputStream o = new ObjectOutputStream(new FileOutputStream(filename));){
-			o.writeObject(objects);
+			o.writeObject(funds);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

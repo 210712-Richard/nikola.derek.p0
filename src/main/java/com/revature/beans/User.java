@@ -1,155 +1,160 @@
 package com.revature.beans;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.util.List;
+import java.util.Objects;
 
 public class User implements Serializable {
-	// created the UID to get rid of the warning
-	private static final long serialVersionUID = -6426075925303078798L;
+	
 	private Integer id;
 	private String username;
 	private String email;
-	private LocalDate birthday;
+	private String phone;
 	private UserType type;
-	private Long currency;
-	private LocalDate lastCheckIn;
-	//private List<GachaObject> inventory;
-	
-	public User() {
-		super();
-		this.type = UserType.MEMBER;
-		this.lastCheckIn = LocalDate.of(2021, 1, 1);
-		this.currency = 0l;
-	}
-	
-	public User(Integer id, String username, String email, LocalDate birthday, Long currency) {
-		this();
-		this.id = id;
-		this.username = username;
-		this.email = email;
-		this.birthday = birthday;
-		this.currency = currency;
-	}
+	private Long money;
+	private String password;
 
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public LocalDate getBirthday() {
-		return birthday;
-	}
-	public void setBirthday(LocalDate birthday) {
-		this.birthday = birthday;
-	}
-	public UserType getType() {
-		return type;
-	}
-	public void setType(UserType type) {
-		this.type = type;
-	}
-	public Long getCurrency() {
-		return currency;
-	}
-	public void setCurrency(Long currency) {
-		this.currency = currency;
-	}
-	/*public List<GachaObject> getInventory() {
-		return inventory;
-	}
-	public void setInventory(List<GachaObject> inventory) {
-		this.inventory = inventory;
-	}*/
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((birthday == null) ? 0 : birthday.hashCode());
-		result = prime * result + ((currency == null) ? 0 : currency.hashCode());
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		//result = prime * result + ((inventory == null) ? 0 : inventory.hashCode());
-		result = prime * result + ((lastCheckIn == null) ? 0 : lastCheckIn.hashCode());
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
-		result = prime * result + ((username == null) ? 0 : username.hashCode());
-		return result;
-	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (birthday == null) {
-			if (other.birthday != null)
-				return false;
-		} else if (!birthday.equals(other.birthday))
-			return false;
-		if (currency == null) {
-			if (other.currency != null)
-				return false;
-		} else if (!currency.equals(other.currency))
-			return false;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		/*if (inventory == null) {
-			if (other.inventory != null)
-				return false;
-		} else if (!inventory.equals(other.inventory))
-			return false;*/
-		if (lastCheckIn == null) {
-			if (other.lastCheckIn != null)
-				return false;
-		} else if (!lastCheckIn.equals(other.lastCheckIn))
-			return false;
-		if (type != other.type)
-			return false;
-		if (username == null) {
-			if (other.username != null)
-				return false;
-		} else if (!username.equals(other.username))
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", email=" + email + ", birthday=" + birthday + ", type="
-				+ type + ", currency=" + currency + ", lastCheckIn=" + lastCheckIn + /*", inventory=" + inventory + */"]";
-	}
-
-	public LocalDate getLastCheckIn() {
-		return lastCheckIn;
-	}
-
-	public void setLastCheckIn(LocalDate lastCheckIn) {
-		this.lastCheckIn = lastCheckIn;
-	}
+public User() {
+	super();
+	this.type = UserType.MEMBER;
 }
+
+public User(Integer id, String username, String email, String phone, Long money, String password) {
+	this();
+	this.id = id;
+	this.username = username;
+	this.email = email;
+	this.phone = phone;
+	this.money = money;
+	this.password = password;
+}
+
+public UserType getType() {
+	return type;
+}
+
+public void setType(UserType type) {
+	this.type = type;
+}
+
+public Integer getId() {
+	return id;
+}
+
+public void setId(Integer id) {
+	this.id = id;
+}
+
+public String getUsername() {
+	return username;
+}
+
+public void setUsername(String username) {
+	this.username = username;
+}
+
+public String getEmail() {
+	return email;
+}
+
+public void setEmail(String email) {
+	this.email = email;
+}
+
+public String getPhone() {
+	return phone;
+}
+
+public void setPhone(String phone) {
+	this.phone = phone;
+}
+
+public Long getFunds() {
+	return money;
+}
+
+public void setFunds(Long money) {
+	this.money = money;
+}
+
+public String getPassword() {
+	return password;
+}
+
+public void setPassword(String password) {
+	this.password = password;
+}
+
+@Override
+public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((email == null) ? 0 : email.hashCode());
+	result = prime * result + ((id == null) ? 0 : id.hashCode());
+	result = prime * result + ((money == null) ? 0 : money.hashCode());
+	result = prime * result + ((password == null) ? 0 : password.hashCode());
+	result = prime * result + ((phone == null) ? 0 : phone.hashCode());
+	result = prime * result + ((type == null) ? 0 : type.hashCode());
+	result = prime * result + ((username == null) ? 0 : username.hashCode());
+	return result;
+}
+
+@Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	User other = (User) obj;
+	if (email == null) {
+		if (other.email != null)
+			return false;
+	} else if (!email.equals(other.email))
+		return false;
+	if (id == null) {
+		if (other.id != null)
+			return false;
+	} else if (!id.equals(other.id))
+		return false;
+	if (money == null) {
+		if (other.money != null)
+			return false;
+	} else if (!money.equals(other.money))
+		return false;
+	if (password == null) {
+		if (other.password != null)
+			return false;
+	} else if (!password.equals(other.password))
+		return false;
+	if (phone == null) {
+		if (other.phone != null)
+			return false;
+	} else if (!phone.equals(other.phone))
+		return false;
+	if (type != other.type)
+		return false;
+	if (username == null) {
+		if (other.username != null)
+			return false;
+	} else if (!username.equals(other.username))
+		return false;
+	return true;
+}
+
+@Override
+public String toString() {
+	return "User [type=" + type +", id=" + id + ", username=" + username + ", email=" + email + ", phone=" + phone + ", "
+			+ " money=" + money + ", password=" + password + "]";
+}
+
+
+
+}
+
+
+
+
+

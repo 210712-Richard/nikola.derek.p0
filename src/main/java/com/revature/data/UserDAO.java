@@ -21,13 +21,13 @@ public class UserDAO {
 		// Helper for myself. If no users exist in the users.dat file (first startup) than I should create a few
 		if(users == null) {
 			users = new ArrayList<User>();
-			users.add(new User(users.size(), "Alby", "alby@alby.alby", LocalDate.of(1900, 1, 1), 1000l));
-			users.add(new User(users.size(), "William", "will@will.will", LocalDate.of(1950, 5, 1), 3000l));
-			users.add(new User(users.size(), "Jaclyn", "jaclyn@jaclyn.jaclyn", LocalDate.of(2021, 1, 1), 2000l));
-			User u = new User(users.size(), "richard", "richard.orr@revature.com", LocalDate.of(1900, 1, 1), 1000l);
+			users.add(new User(users.size(), "William", "will@will.will", "111-222-3333", 3000l, "password"));
+			users.add(new User(users.size(), "Jaclyn", "jaclyn@jaclyn.jaclyn", "222-333-4444", 2000l, "password" ));
+			User u = new User(users.size(), "richard", "richard.orr@revature.com", "333-444-5555", 1000l, "password");
+			//setting associate manually
 			u.setType(UserType.ASSOCIATE);
 			users.add(u);
-			ds.writeObjectsToFile(users, filename);
+			ds.writeFundsToFile(users, filename);
 		}
 	}
 	public void addUser(User u) {
@@ -61,7 +61,7 @@ public class UserDAO {
 	}
 	
 	public void writeToFile() {
-		new DataSerializer<User>().writeObjectsToFile(users, filename);
+		new DataSerializer<User>().writeFundsToFile(users, filename);
 	}
 
 }

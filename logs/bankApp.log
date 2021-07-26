@@ -106,3 +106,21 @@
 2021-07-21 14:24:28 TRACE Menu:96 - Start menu returning selection: -1
 2021-07-21 14:24:28 TRACE Menu:89 - called startMenu()
 2021-07-21 14:24:28 TRACE Menu:96 - Start menu returning selection: -1
+2021-07-26 01:32:31 TRACE Menu:28 - Start BankApp. start()
+2021-07-26 01:32:31 TRACE Menu:98 - called startMenu()
+2021-07-26 01:32:41 TRACE Menu:105 - Start menu returning selection: 2
+2021-07-26 01:33:06 TRACE Menu:98 - called startMenu()
+2021-07-26 01:33:10 TRACE Menu:105 - Start menu returning selection: 1
+2021-07-26 01:33:14 DEBUG Menu:35 - mike
+2021-07-26 01:33:14 WARN  Menu:39 - Unsuccessful login attempt: mike
+2021-07-26 01:33:14 TRACE Menu:98 - called startMenu()
+2021-07-26 01:33:38 TRACE Menu:105 - Start menu returning selection: 1
+2021-07-26 01:33:44 DEBUG Menu:35 - mike
+2021-07-26 01:33:44 WARN  Menu:39 - Unsuccessful login attempt: mike
+2021-07-26 01:33:44 TRACE Menu:98 - called startMenu()
+2021-07-26 01:33:47 TRACE Menu:105 - Start menu returning selection: 2
+2021-07-26 01:34:09 TRACE Menu:98 - called startMenu()
+2021-07-26 01:34:16 TRACE Menu:105 - Start menu returning selection: 1
+2021-07-26 01:34:18 DEBUG Menu:35 - mike
+2021-07-26 01:34:18 WARN  Menu:39 - Unsuccessful login attempt: mike
+2021-07-26 01:34:18 TRACE Menu:98 - called startMenu()
