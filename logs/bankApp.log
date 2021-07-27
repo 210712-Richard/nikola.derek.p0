@@ -124,3 +124,15 @@
 2021-07-26 01:34:18 DEBUG Menu:35 - mike
 2021-07-26 01:34:18 WARN  Menu:39 - Unsuccessful login attempt: mike
 2021-07-26 01:34:18 TRACE Menu:98 - called startMenu()
+2021-07-26 01:43:19 TRACE Menu:28 - Start BankApp. start()
+2021-07-26 01:43:19 TRACE Menu:100 - called startMenu()
+2021-07-26 01:43:44 TRACE Menu:107 - Start menu returning selection: 2
+2021-07-26 01:44:04 TRACE Menu:100 - called startMenu()
+2021-07-26 01:44:07 TRACE Menu:107 - Start menu returning selection: 1
+2021-07-26 01:44:09 DEBUG Menu:35 - mike
+2021-07-26 01:44:16 DEBUG Menu:45 - password
+2021-07-26 01:44:16 TRACE Menu:133 - called member()
+2021-07-26 01:45:23 TRACE Menu:146 - Deposited 0 to balance
+2021-07-26 01:45:40 TRACE Menu:146 - Deposited 200 to balance
+2021-07-26 01:46:02 TRACE Menu:157 - Withdrew 50 from balance
+2021-07-26 01:46:06 TRACE Menu:100 - called startMenu()
