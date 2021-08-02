@@ -239,14 +239,14 @@ public class Menu {
 	
 	// reading funds from deposit/withdrawal
 			private long fundsChange() {
-				long newMoney;
+				long newFunds;
 				try {
-					newMoney = Long.parseLong(scan.nextLine());
+					newFunds = Long.parseLong(scan.nextLine());
 				} catch(Exception e) {
-					newMoney = 0;
+					newFunds = 0;
 				}
 				
-				return newMoney;
+				return newFunds;
 			}
 		
 

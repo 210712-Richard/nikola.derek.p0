@@ -16,26 +16,30 @@ import com.revature.factory.Log;
 @Log
 public class UserServiceImpl implements UserService {
 	//
-	//private Logger log = LogManager.getLogger(UserService.class);
-	public UserDAO ud = (UserDAO) BeanFactory.getFactory().get(UserDAO.class, UserDAOFile.class);
+	private Logger log = LogManager.getLogger(UserServiceImpl.class);
+	public UserDAO ud = new UserDAOFile();
+	
+	
+	
+	
 	
 	@Override
 	public User login(String name) {
 		User u = ud.getUser(name);
-		ud.writeToFile();
+		(new UserDAOFile()).writeToFile();
 		return u;
 	}
 	
 	@Override
 	public void Deposit(User user, Long funds) {
 		user.setFunds(user.getFunds() + funds);
-		ud.writeToFile();
+		(new UserDAOFile()).writeToFile();
 	}
 	
 	@Override
 	public void Withdraw(User user, Long funds) {
 		user.setFunds(user.getFunds() - funds);
-		ud.writeToFile();
+		(new UserDAOFile()).writeToFile();
 	}
 	
 	@Override
@@ -47,7 +51,7 @@ public class UserServiceImpl implements UserService {
 		u.setPassword(password);
 		u.setFunds(0l);
 		ud.addUser(u);
-		ud.writeToFile();
+		(new UserDAOFile()).writeToFile();
 	}
 
 	@Override
@@ -74,7 +78,7 @@ public class UserServiceImpl implements UserService {
 		user.setFunds(0l);
 		
 		ud.addUser(user);
-		ud.writeToFile();
+		(new UserDAOFile()).writeToFile();
 		
 		return user;
 	}

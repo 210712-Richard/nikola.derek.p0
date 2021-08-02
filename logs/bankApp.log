@@ -136,3 +136,123 @@
 2021-07-26 01:45:40 TRACE Menu:146 - Deposited 200 to balance
 2021-07-26 01:46:02 TRACE Menu:157 - Withdrew 50 from balance
 2021-07-26 01:46:06 TRACE Menu:100 - called startMenu()
+2021-07-27 21:43:18 ERROR BeanFactory:37 - Method threw exception: java.lang.reflect.InvocationTargetException
+2021-07-27 21:43:18 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - com.revature.controllers.UserControllerImpl.<init>(UserControllerImpl.java:19)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - com.revature.Driver.main(Driver.java:19)
+2021-07-27 21:43:18 ERROR BeanFactory:37 - Method threw exception: java.lang.reflect.InvocationTargetException
+2021-07-27 21:43:18 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-27 21:43:18 WARN  BeanFactory:39 - com.revature.Driver.main(Driver.java:19)
+2021-07-27 21:46:38 ERROR BeanFactory:37 - Method threw exception: java.lang.reflect.InvocationTargetException
+2021-07-27 21:46:38 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - com.revature.controllers.UserControllerImpl.<init>(UserControllerImpl.java:19)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - com.revature.Driver.main(Driver.java:19)
+2021-07-27 21:46:38 ERROR BeanFactory:37 - Method threw exception: java.lang.reflect.InvocationTargetException
+2021-07-27 21:46:38 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-27 21:46:38 WARN  BeanFactory:39 - com.revature.Driver.main(Driver.java:19)
+2021-07-28 09:30:14 ERROR BeanFactory:37 - Method threw exception: java.lang.reflect.InvocationTargetException
+2021-07-28 09:30:14 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - com.revature.controllers.UserControllerImpl.<init>(UserControllerImpl.java:19)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - com.revature.Driver.main(Driver.java:19)
+2021-07-28 09:30:14 ERROR BeanFactory:37 - Method threw exception: java.lang.reflect.InvocationTargetException
+2021-07-28 09:30:14 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-28 09:30:14 WARN  BeanFactory:39 - com.revature.Driver.main(Driver.java:19)
+2021-07-28 10:07:29 ERROR BeanFactory:37 - Method threw exception: java.lang.reflect.InvocationTargetException
+2021-07-28 10:07:29 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - com.revature.controllers.UserControllerImpl.<init>(UserControllerImpl.java:19)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - com.revature.Driver.main(Driver.java:21)
+2021-07-28 10:07:29 ERROR BeanFactory:37 - Method threw exception: java.lang.reflect.InvocationTargetException
+2021-07-28 10:07:29 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-28 10:07:29 WARN  BeanFactory:39 - com.revature.Driver.main(Driver.java:21)
+2021-07-28 11:05:11 ERROR BeanFactory:37 - Method threw exception: java.lang.reflect.InvocationTargetException
+2021-07-28 11:05:11 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - com.revature.controllers.UserControllerImpl.<init>(UserControllerImpl.java:19)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - com.revature.Driver.main(Driver.java:21)
+2021-07-28 11:05:11 ERROR BeanFactory:37 - Method threw exception: java.lang.reflect.InvocationTargetException
+2021-07-28 11:05:11 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - com.revature.factory.BeanFactory.get(BeanFactory.java:34)
+2021-07-28 11:05:11 WARN  BeanFactory:39 - com.revature.Driver.main(Driver.java:21)
+2021-07-28 12:50:24 TRACE Menu:28 - Start BankApp. start()
+2021-07-28 12:50:24 TRACE Menu:100 - called startMenu()
+2021-07-28 12:50:35 TRACE Menu:107 - Start menu returning selection: 1
+2021-07-28 12:50:39 DEBUG Menu:35 - NIk
+2021-07-28 12:50:39 WARN  Menu:39 - Unsuccessful login attempt: NIk
+2021-07-28 12:50:39 TRACE Menu:100 - called startMenu()
+2021-07-28 12:50:47 TRACE Menu:107 - Start menu returning selection: 1
+2021-07-28 12:50:54 DEBUG Menu:35 - Nik
+2021-07-28 12:50:59 DEBUG Menu:45 - password
+2021-07-28 12:50:59 TRACE Menu:133 - called member()
+2021-07-28 17:40:33 TRACE Menu:28 - Start BankApp. start()
+2021-07-28 17:40:33 TRACE Menu:100 - called startMenu()
+2021-07-28 17:40:37 TRACE Menu:107 - Start menu returning selection: 1
+2021-07-28 17:40:45 DEBUG Menu:35 - richard
+2021-07-28 17:40:49 DEBUG Menu:45 - password
+2021-07-28 17:40:49 TRACE Menu:119 - called associate()
+2021-07-28 17:40:57 TRACE Menu:128 - Banker menu returning selection: 2
+2021-07-28 17:41:00 TRACE Menu:186 - Deposited 400 to balance
+2021-07-28 17:41:00 TRACE Menu:119 - called associate()
+2021-07-28 17:41:07 TRACE Menu:128 - Banker menu returning selection: 4

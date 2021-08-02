@@ -1,16 +1,19 @@
 package com.revature.beans;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 public class User implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String username;
 	private String email;
 	private String phone;
 	private UserType type;
-	private Long money;
+	private Long funds;
 	private String password;
 
 
@@ -20,13 +23,13 @@ public User() {
 	this.type = UserType.MEMBER;
 }
 
-public User(Integer id, String username, String email, String phone, Long money, String password) {
+public User(Integer id, String username, String email, String phone, Long money, String password, Long funds) {
 	this();
 	this.id = id;
 	this.username = username;
 	this.email = email;
 	this.phone = phone;
-	this.money = money;
+	this.funds = funds;
 	this.password = password;
 }
 
@@ -71,11 +74,11 @@ public void setPhone(String phone) {
 }
 
 public Long getFunds() {
-	return money;
+	return funds;
 }
 
 public void setFunds(Long money) {
-	this.money = money;
+	this.funds = money;
 }
 
 public String getPassword() {
@@ -92,7 +95,7 @@ public int hashCode() {
 	int result = 1;
 	result = prime * result + ((email == null) ? 0 : email.hashCode());
 	result = prime * result + ((id == null) ? 0 : id.hashCode());
-	result = prime * result + ((money == null) ? 0 : money.hashCode());
+	result = prime * result + ((funds == null) ? 0 : funds.hashCode());
 	result = prime * result + ((password == null) ? 0 : password.hashCode());
 	result = prime * result + ((phone == null) ? 0 : phone.hashCode());
 	result = prime * result + ((type == null) ? 0 : type.hashCode());
@@ -119,10 +122,10 @@ public boolean equals(Object obj) {
 			return false;
 	} else if (!id.equals(other.id))
 		return false;
-	if (money == null) {
-		if (other.money != null)
+	if (funds == null) {
+		if (other.funds != null)
 			return false;
-	} else if (!money.equals(other.money))
+	} else if (!funds.equals(other.funds))
 		return false;
 	if (password == null) {
 		if (other.password != null)
@@ -146,8 +149,8 @@ public boolean equals(Object obj) {
 
 @Override
 public String toString() {
-	return "User [type=" + type +", id=" + id + ", username=" + username + ", email=" + email + ", phone=" + phone + ", "
-			+ " money=" + money + ", password=" + password + "]";
+	return "User [id=" + id +", type=" + type +", username=" + username + ", email=" + email + ", phone=" + phone + ", "
+			+ " money=" + funds + ", password=" + password + "]";
 }
 
 
